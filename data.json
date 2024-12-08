@@ -1,0 +1,55 @@
+{
+  "adminMetrics": [
+    {
+      "id": 1,
+      "metric": "Total Users",
+      "value": 200
+    },
+    {
+      "id": 2,
+      "metric": "Active Users",
+      "value": 180
+    }
+  ],
+  "userTasks": [
+    {
+      "id": 1,
+      "task": "Complete profile"
+    },
+    {
+      "id": 2,
+      "task": "Submit assignment"
+    }
+  ],
+  "users": [
+    {
+      "id": 2,
+      "name": "user",
+      "email": "user@example.com",
+      "password": "$2b$12$gOa9OM4V.xsry1wU3AXlGGoziZUy3zQsPNT5y6U8nPjMMg5a.eB2i",
+      "role": "user",
+      "isActive": true
+    },
+    {
+      "id": 3,
+      "name": "Charlie",
+      "email": "charlie@example.com",
+      "password": "$2b$10$KIXiMxxEASbV8OQqN8tO.u6fTZo8j6fGf6O6mX/r2pi3iwkIDTGOy",
+      "role": "user",
+      "isActive": false
+    },
+    {
+      "id": 4,
+      "email": "admin@example.com",
+      "skipFTN": false,
+      "sendWelcomeEmail": false,
+      "profileImage": null,
+      "password": "$2b$10$TgI.c6MkpF0pVuUmQMgQ4euAcnKScTexZRdpkxzJEq37ZfAKblP/6",
+      "isActive": true,
+      "role": "admin",
+      "address": {
+        "invoicingAddressEnabled": false
+      }
+    }
+  ]
+}
