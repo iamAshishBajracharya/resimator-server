@@ -85,9 +85,9 @@ app.post('/api/login', async (req, res) => {
     return res.status(404).json({ error: 'User not found' });
   }
 
-  if (!user.isActive) {
-    return res.status(403).json({ error: 'User account is inactive' });
-  }
+  // if (!user.isActive) {
+  //   return res.status(403).json({ error: 'User account is inactive' });
+  // }
 
   const match = await bcrypt.compare(password, user.password);
   if (!match) {
