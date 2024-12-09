@@ -24,30 +24,65 @@
   "users": [
     {
       "id": 2,
+      "property": "Markus Virtanen",
       "name": "user",
       "email": "user@example.com",
       "password": "$2b$12$gOa9OM4V.xsry1wU3AXlGGoziZUy3zQsPNT5y6U8nPjMMg5a.eB2i",
       "role": "user",
-      "isActive": true
+      "phone": "+358 40 1234567",
+      "status": "active",
+      "publishedOn": "15.01.2023"
     },
     {
       "id": 3,
+      "property": "Markus Virtanen",
       "name": "Charlie",
       "email": "charlie@example.com",
       "password": "$2b$10$KIXiMxxEASbV8OQqN8tO.u6fTZo8j6fGf6O6mX/r2pi3iwkIDTGOy",
       "role": "user",
-      "isActive": false
+      "phone": "+358 40 1234567",
+      "status": "active",
+      "publishedOn": "15.01.2023"
     },
     {
       "id": 4,
+      "property": "Markus Virtanen",
       "email": "admin@example.com",
       "skipFTN": false,
       "sendWelcomeEmail": false,
       "profileImage": null,
       "password": "$2b$10$TgI.c6MkpF0pVuUmQMgQ4euAcnKScTexZRdpkxzJEq37ZfAKblP/6",
-      "isActive": true,
+      "status": "active",
+      "phone": "+358 40 1234567",
       "role": "admin",
+      "publishedOn": "15.01.2023",
       "address": {
+        "invoicingAddressEnabled": false
+      }
+    },
+    {
+      "id": 4,
+      "property": "Markus Virtanen",
+      "fullName": "asdf",
+      "username": "adf",
+      "email": "adf",
+      "phoneNumber": "adf",
+      "gender": "female",
+      "status": "inactive",
+      "role": "admin",
+      "fntVerification": false,
+      "sendWelcomeEmail": false,
+      "profileImage": "ashish-bajracharya-cit-1733709303220.jpg",
+      "password": "$2b$10$ngR5Rvv7aHzeLrfbR7.co.FM67D6W9GApXKRNQjfN4c8ZXKKhXtqu",
+      "phone": "+358 40 1234567",
+      "publishedOn": "15.01.2023",
+      "address": {
+        "country": "usa",
+        "state": "state1",
+        "city": "city2",
+        "postalCode": "asdf",
+        "streetAddress": "asdf",
+        "residentialArea": "adsf",
         "invoicingAddressEnabled": false
       }
     }

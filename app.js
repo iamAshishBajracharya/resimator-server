@@ -119,7 +119,7 @@ app.post('/api/signup', upload.single('profileImage'), async (req, res) => {
       dateOfBirth,
       status,
       role,
-      skipFTN,
+      fntVerification,
       sendWelcomeEmail,
       country,
       state,
@@ -128,7 +128,7 @@ app.post('/api/signup', upload.single('profileImage'), async (req, res) => {
       streetAddress,
       residentialArea,
       invoicingAddressEnabled,
-      password // Add password here
+      password = 'userPass123' // Add password here
     } = req.body;
 
     const profileImage = req.file ? req.file.filename : null; // Get the uploaded file's name
@@ -136,7 +136,7 @@ app.post('/api/signup', upload.single('profileImage'), async (req, res) => {
     // Hash the password before saving
     const hashedPassword = await bcrypt.hash(password, 10); // 10 is the salt rounds
 
-    const data = loadData();
+    const data = loadData(); // Assuming loadData fetches your data (e.g., from a file or DB)
 
     const newUser = {
       id: data.users.length + 1, // Auto-generate a unique ID
@@ -149,9 +149,9 @@ app.post('/api/signup', upload.single('profileImage'), async (req, res) => {
       dateOfBirth,
       status,
       role,
-      skipFTN: skipFTN === 'true',
-      sendWelcomeEmail: sendWelcomeEmail === 'true',
-      profileImage,
+      fntVerification: fntVerification === 'true', // Convert to boolean
+      sendWelcomeEmail: sendWelcomeEmail === 'true', // Convert to boolean
+      profileImage, // File path saved here
       password: hashedPassword, // Save hashed password
       address: {
         country,
@@ -160,12 +160,12 @@ app.post('/api/signup', upload.single('profileImage'), async (req, res) => {
         postalCode,
         streetAddress,
         residentialArea,
-        invoicingAddressEnabled: invoicingAddressEnabled === 'true'
+        invoicingAddressEnabled: invoicingAddressEnabled === 'true' // Convert to boolean
       }
     };
 
     data.users.push(newUser);
-    saveData(data);
+    saveData(data); // Assuming saveData persists your data
 
     res.status(201).json({
       message: 'User created successfully',
@@ -173,6 +173,21 @@ app.post('/api/signup', upload.single('profileImage'), async (req, res) => {
     });
   } catch (error) {
     res.status(500).json({ error: error.message });
+  }
+});
+
+// Endpoint to get all users
+app.get("/api/users", (req, res) => {
+  try {
+    const data = loadData(); // Load data from your data source (e.g., JSON file or database)
+    
+    // Send the list of users as a response
+    res.status(200).json({
+      message: "Users retrieved successfully",
+      users: data.users, // Assuming `data.users` is an array of user objects
+    });
+  } catch (error) {
+    res.status(500).json({ error: "Failed to retrieve users" });
   }
 });
 
